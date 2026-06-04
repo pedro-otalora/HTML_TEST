@@ -329,24 +329,27 @@
           <div class="video">
             <figure class="video-figure">
               <div class="video-wrapper">
-                <iframe
-                  src="https://www.youtube.com/embed/FzXJkKQkNX4?si=zCpwifUWt-_UTism"
-                  title="Angel Casas Show || Montse Guillen"
-                  loading="lazy"
-                  width="560"
-                  height="315"
-                  allow="
-                    accelerometer;
-                    autoplay;
-                    clipboard-write;
-                    encrypted-media;
-                    gyroscope;
-                    picture-in-picture;
-                  "
-                  referrerpolicy="strict-origin-when-cross-origin"
-                  allowfullscreen
+                <!-- se reemplaza el iframe por una fachada para evitar recursos de terceros -->
+
+                <div
+                  class="youtube-fachada"
+                  id="videoFacade"
+                  data-video-id="FzXJkKQkNX4"
                 >
-                </iframe>
+                  <!-- miniatura oficial del vídeo de YouTube -->
+                  <img
+                    src="https://i.ytimg.com/vi/FzXJkKQkNX4/hqdefault.jpg"
+                    alt="Portada de la entrevista a Montse Guillen"
+                    loading="lazy"
+                    width="560"
+                    height="315"
+                  />
+                  <!-- botón de reproducción falso -->
+                  <button
+                    class="play-button"
+                    aria-label="Reproducir vídeo"
+                  ></button>
+                </div>
               </div>
               <figcaption lang="ca">
                 Entrevista Montse Guillen a TV3 ,
