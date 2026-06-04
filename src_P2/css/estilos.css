@@ -456,6 +456,7 @@ p {
   height: 100%;
   object-fit: cover;
   display: block;
+  will-change: transform, clip-path;
 }
 
 /* 2 columnas para pantallas grandes */
