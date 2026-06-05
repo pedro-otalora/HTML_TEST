@@ -277,8 +277,6 @@ p {
 .logo-svg-header {
   width: 100%;
   height: 100%;
-  contain: paint;
-  content-visibility: auto;
   /* filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.1)); */
 }
 
@@ -326,6 +324,8 @@ p {
   animation: popIn 0.8s cubic-bezier(0.175, 0.885, 0.32, 1.275) both;
   /* se elimina el latido para optimizar */
   /* latido 3s ease-in-out 2.5s infinite; */
+
+
 }
 
 .anim-simbolo {
@@ -339,6 +339,41 @@ p {
   /* animation: fadeInSombra 1s ease-out 1.4s forwards; */
 }
 
+@keyframes popIn {
+  0% {
+    transform: scale(0);
+    opacity: 0;
+  }
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+@keyframes fadeIn {
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes fadeInSombra {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 0.6;
+  }
+}
+
+@keyframes latido {
+  0%,
+  100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.1);
+  }
+}
 
 /* =======================================
    HERO INDEX
@@ -462,8 +497,7 @@ p {
   display: block;
   align-items: center;
   text-align: center;
-  contain: layout style;
-  /* contain: content; */
+
   margin: 0 auto;
   padding: 1rem 2.5rem;
 }
@@ -1050,47 +1084,6 @@ abbr[title] {
   outline: 3px solid var(--color-primario);
   outline-offset: 2px;
 }
-
-/* ========================================
-   efectos de las animaciones
-======================================= */
-
-@keyframes popIn {
-  0% {
-    transform: scale(0);
-    opacity: 0;
-  }
-  100% {
-    transform: scale(1);
-    opacity: 1;
-  }
-}
-
-@keyframes fadeIn {
-  to {
-    opacity: 1;
-  }
-}
-
-@keyframes fadeInSombra {
-  from {
-    opacity: 0;
-  }
-  to {
-    opacity: 0.6;
-  }
-}
-
-@keyframes latido {
-  0%,
-  100% {
-    transform: scale(1);
-  }
-  50% {
-    transform: scale(1.1);
-  }
-}
-
 
 /* ==========================================================================
    EXTRACCIÓN DE HOVER.CSS PARA EVITAR LA DEPENDENCIA EXTERNA
