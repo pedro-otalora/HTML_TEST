@@ -298,6 +298,7 @@ p {
   text-transform: uppercase;
   font-size: clamp(1.1rem, 4vw, 1.6rem);
   line-height: 1.2;
+  letter-spacing: -0.02em;
 }
 
 .logo-img {
@@ -311,10 +312,11 @@ p {
   font-weight: var(--fuente-regular);
   font-style: italic;
   color: var(--color-primario);
-  letter-spacing: 2;
+  letter-spacing: 2px;
   text-transform: none;
   margin-top: -2px;
   font-size: clamp(0.9rem, 3.5vw, 1.4rem);
+  line-height: 1;
 }
 
 /* ========================================
@@ -669,18 +671,29 @@ p {
 
 .header-interno-image {
   width: 100%;
+  aspect-ratio: 1120 / 400;
   border-radius: 12px;
   display: block;
   object-fit: cover;
 
-  height: auto;
-  aspect-ratio: auto;
+  /* height: auto; */
+  /* aspect-ratio: auto; */
   object-position: center top;
+}
+
+@media (max-width: 767px) {
+  .header-interno-image {
+    aspect-ratio: 4 / 3;
+    /* height: 350px; */
+    /* object-position: top center; */
+  }
 }
 
 @media (min-width: 768px) {
   .header-interno-image {
+    
     height: 350px;
+    aspect-ratio: 16 / 5;
     object-position: top center;
   }
 }
@@ -949,6 +962,8 @@ p {
   margin-bottom: 3rem;
   border-radius: 16px;
   box-shadow: var(--sombra-tenue);
+  content-visibility: auto;
+  contain-intrinsic-size: 1000px;
 }
 
 .fuentes h1 {
